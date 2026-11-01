@@ -1,0 +1,182 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Handheld game console (Game Boy style) - low detail, vanilla placeholder textures. Portrait orientation, front = south (+Z), fits inside 0-16.",
+	"textures": {
+		"particle": "block/light_gray_concrete",
+		"body": "block/light_gray_concrete",
+		"bezel": "block/gray_concrete",
+		"screen": "models:block/lime_concrete",
+		"dpad": "models:block/black_concrete",
+		"btn": "models:block/magenta_concrete"
+	},
+	"elements": [
+		{
+			"name": "body_main",
+			"from": [3.5, 2.5, 7],
+			"to": [12.5, 15, 9],
+			"faces": {
+				"north": {"uv": [3.5, 1, 12.5, 13.5], "texture": "#body"},
+				"east": {"uv": [7, 1, 9, 13.5], "texture": "#body"},
+				"south": {"uv": [3.5, 1, 12.5, 13.5], "texture": "#body"},
+				"west": {"uv": [7, 1, 9, 13.5], "texture": "#body"},
+				"up": {"uv": [3.5, 7, 12.5, 9], "texture": "#body"},
+				"down": {"uv": [3.5, 7, 12.5, 9], "texture": "#body"}
+			}
+		},
+		{
+			"name": "body_base_notched",
+			"from": [4.5, 1, 7],
+			"to": [11.5, 2.5, 9],
+			"faces": {
+				"north": {"uv": [4.5, 13.5, 11.5, 15], "texture": "#body"},
+				"east": {"uv": [7, 13.5, 9, 15], "texture": "#body"},
+				"south": {"uv": [4.5, 13.5, 11.5, 15], "texture": "#body"},
+				"west": {"uv": [7, 13.5, 9, 15], "texture": "#body"},
+				"up": {"uv": [4.5, 7, 11.5, 9], "texture": "#body"},
+				"down": {"uv": [4.5, 7, 11.5, 9], "texture": "#body"}
+			}
+		},
+		{
+			"name": "screen_bezel",
+			"from": [4.4, 7.4, 9],
+			"to": [11.6, 14.2, 9.2],
+			"faces": {
+				"east": {"uv": [6.8, 1.8, 7, 8.6], "texture": "#bezel"},
+				"south": {"uv": [4.4, 1.8, 11.6, 8.6], "texture": "#bezel"},
+				"west": {"uv": [9, 1.8, 9.2, 8.6], "texture": "#bezel"},
+				"up": {"uv": [4.4, 9, 11.6, 9.2], "texture": "#bezel"},
+				"down": {"uv": [4.4, 6.8, 11.6, 7], "texture": "#bezel"}
+			}
+		},
+		{
+			"name": "screen",
+			"from": [4.75, 9, 9.2],
+			"to": [11, 13.2, 9.3],
+			"faces": {
+				"south": {"uv": [4.75, 2.8, 11, 7], "texture": "#screen"}
+			}
+		},
+		{
+			"name": "dpad_horizontal",
+			"from": [4.5, 4.7, 9],
+			"to": [7.5, 5.7, 9.3],
+			"faces": {
+				"east": {"uv": [6.7, 10.3, 7, 11.3], "texture": "#dpad"},
+				"south": {"uv": [4.5, 10.3, 7.5, 11.3], "texture": "#dpad"},
+				"west": {"uv": [9, 10.3, 9.3, 11.3], "texture": "#dpad"},
+				"up": {"uv": [4.5, 9, 7.5, 9.3], "texture": "#dpad"},
+				"down": {"uv": [4.5, 6.7, 7.5, 7], "texture": "#dpad"}
+			}
+		},
+		{
+			"name": "dpad_vertical",
+			"from": [5.5, 3.7, 9],
+			"to": [6.5, 6.7, 9.3],
+			"faces": {
+				"east": {"uv": [6.7, 9.3, 7, 12.3], "texture": "#dpad"},
+				"south": {"uv": [5.5, 9.3, 6.5, 12.3], "texture": "#dpad"},
+				"west": {"uv": [9, 9.3, 9.3, 12.3], "texture": "#dpad"},
+				"up": {"uv": [5.5, 9, 6.5, 9.3], "texture": "#dpad"},
+				"down": {"uv": [5.5, 6.7, 6.5, 7], "texture": "#dpad"}
+			}
+		},
+		{
+			"name": "button_a",
+			"from": [10.6, 4.9, 9],
+			"to": [11.8, 6.1, 9.3],
+			"faces": {
+				"east": {"uv": [6.7, 9.9, 7, 11.1], "texture": "#btn"},
+				"south": {"uv": [10.6, 9.9, 11.8, 11.1], "texture": "#btn"},
+				"west": {"uv": [9, 9.9, 9.3, 11.1], "texture": "#btn"},
+				"up": {"uv": [10.6, 9, 11.8, 9.3], "texture": "#btn"},
+				"down": {"uv": [10.6, 6.7, 11.8, 7], "texture": "#btn"}
+			}
+		},
+		{
+			"name": "button_b",
+			"from": [8.7, 3.9, 9],
+			"to": [9.9, 5.1, 9.3],
+			"faces": {
+				"east": {"uv": [6.7, 10.9, 7, 12.1], "texture": "#btn"},
+				"south": {"uv": [8.7, 10.9, 9.9, 12.1], "texture": "#btn"},
+				"west": {"uv": [9, 10.9, 9.3, 12.1], "texture": "#btn"},
+				"up": {"uv": [8.7, 9, 9.9, 9.3], "texture": "#btn"},
+				"down": {"uv": [8.7, 6.7, 9.9, 7], "texture": "#btn"}
+			}
+		},
+		{
+			"name": "button_select",
+			"from": [6.1, 2, 9],
+			"to": [7.5, 2.6, 9.2],
+			"faces": {
+				"east": {"uv": [6.8, 13.4, 7, 14], "texture": "#bezel"},
+				"south": {"uv": [6.1, 13.4, 7.5, 14], "texture": "#bezel"},
+				"west": {"uv": [9, 13.4, 9.2, 14], "texture": "#bezel"},
+				"up": {"uv": [6.1, 9, 7.5, 9.2], "texture": "#bezel"},
+				"down": {"uv": [6.1, 6.8, 7.5, 7], "texture": "#bezel"}
+			}
+		},
+		{
+			"name": "button_start",
+			"from": [8.1, 2, 9],
+			"to": [9.5, 2.6, 9.2],
+			"faces": {
+				"east": {"uv": [6.8, 13.4, 7, 14], "texture": "#bezel"},
+				"south": {"uv": [8.1, 13.4, 9.5, 14], "texture": "#bezel"},
+				"west": {"uv": [9, 13.4, 9.2, 14], "texture": "#bezel"},
+				"up": {"uv": [8.1, 9, 9.5, 9.2], "texture": "#bezel"},
+				"down": {"uv": [8.1, 6.8, 9.5, 7], "texture": "#bezel"}
+			}
+		},
+		{
+			"name": "cartridge",
+			"from": [4.5, 15, 7.3],
+			"to": [11.5, 15.9, 8.7],
+			"faces": {
+				"north": {"uv": [4.5, 0.1, 11.5, 1], "texture": "#bezel"},
+				"east": {"uv": [7.3, 0.1, 8.7, 1], "texture": "#bezel"},
+				"south": {"uv": [4.5, 0.1, 11.5, 1], "texture": "#bezel"},
+				"west": {"uv": [7.3, 0.1, 8.7, 1], "texture": "#bezel"},
+				"up": {"uv": [4.5, 7.3, 11.5, 8.7], "texture": "#bezel"},
+				"down": {"uv": [4.5, 7.3, 11.5, 8.7], "texture": "#bezel"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3.25, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3.25, 1],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"firstperson_righthand": {
+			"rotation": [0.28, 0.68, 2],
+			"translation": [-0.62, 3.45, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0.28, -13.07, 2.02],
+			"translation": [-0.62, 3.45, 1.13],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"ground": {
+			"rotation": [-93, -0.29, 0.28],
+			"translation": [0, -1.25, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [7.82, -26.51, -9.57],
+			"translation": [0, -0.5, 0],
+			"scale": [0.87, 0.87, 0.87]
+		},
+		"head": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 13, 7]
+		},
+		"fixed": {
+			"rotation": [0, -180, 0]
+		}
+	}
+}

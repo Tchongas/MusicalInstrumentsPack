@@ -1,97 +1,118 @@
 {
-    "model": {
-      "type": "minecraft:select",
-      "property": "minecraft:custom_model_data",
-      "index": 0,
-      "cases": [
-        {
-          "when": "1",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/flute"
-          }
-        },
-        {
-          "when": "7271",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar"
-          }
-        },
-        {
-          "when": "7272",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitaracacia"
-          }
-        },
-        {
-          "when": "7273",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar_birch"
-          }
-        },
-        {
-          "when": "7274",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar_cherry"
-          }
-        },
-        {
-          "when": "7275",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar_crimson"
-          }
-        },
-        {
-          "when": "7276",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar_darkoak"
-          }
-        },
-        {
-          "when": "7277",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar_jungle"
-          }
-        },
-        {
-          "when": "7278",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar_mangroove"
-          }
-        },
-        {
-          "when": "7279",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar_spruce"
-          }
-        },
-        {
-          "when": "7280",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/guitar_warped"
-          }
-        },
-		    {
-          "when": "7281",
-          "model": {
-            "type": "minecraft:model",
-            "model": "item/banjo"
-          }
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:custom_model_data",
+    "index": 0,
+    "cases": [
+      {
+        "when": "1",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/flute"
         }
-      ],
-      "fallback": {
-        "type": "minecraft:model",
-        "model": "minecraft:item/carrot_on_a_stick"
+      },
+      {
+        "when": "7271",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_oak"
+        }
+      },
+      {
+        "when": "7272",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_acacia"
+        }
+      },
+      {
+        "when": "7273",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_birch"
+        }
+      },
+      {
+        "when": "7274",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_cherry"
+        }
+      },
+      {
+        "when": "7275",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_crimson"
+        }
+      },
+      {
+        "when": "7276",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_dark_oak"
+        }
+      },
+      {
+        "when": "7277",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_jungle"
+        }
+      },
+      {
+        "when": "7278",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_mangrove"
+        }
+      },
+      {
+        "when": "7279",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_spruce"
+        }
+      },
+      {
+        "when": "7280",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_warped"
+        }
+      },
+      {
+        "when": "7281",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/banjo"
+        }
+      },
+      {
+        "when": "7282",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/gameboy"
+        }
+      },
+      {
+        "when": "7283",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/keytar"
+        }
+      },
+      {
+        "when": "7284",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_bamboo"
+        }
       }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/carrot_on_a_stick"
     }
   }
+}

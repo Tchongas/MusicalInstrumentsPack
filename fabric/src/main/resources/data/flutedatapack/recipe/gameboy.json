@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " B ",
+    " R ",
+    " I "
+  ],
+  "key": {
+    "B": "minecraft:light_gray_concrete",
+    "R": "minecraft:redstone",
+    "I": "minecraft:iron_ingot"
+  },
+  "result": {
+    "id": "minecraft:carrot_on_a_stick",
+    "count": 1,
+    "components": {
+      "minecraft:custom_model_data": {
+        "strings": [
+          "7282"
+        ]
+      },
+      "minecraft:item_name": "Game Boy"
+    }
+  }
+}

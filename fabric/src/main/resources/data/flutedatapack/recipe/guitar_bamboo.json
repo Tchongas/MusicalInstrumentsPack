@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  C",
+    "B# ",
+    "DB "
+  ],
+  "key": {
+    "#": "minecraft:string",
+    "B": "minecraft:bamboo_planks",
+    "C": "minecraft:stick",
+    "D": "minecraft:leather"
+  },
+  "result": {
+    "id": "minecraft:carrot_on_a_stick",
+    "count": 1,
+    "components": {
+      "minecraft:custom_model_data": {
+        "strings": [
+          "7284"
+        ]
+      },
+      "minecraft:item_name": "Bamboo Guitar"
+    }
+  }
+}

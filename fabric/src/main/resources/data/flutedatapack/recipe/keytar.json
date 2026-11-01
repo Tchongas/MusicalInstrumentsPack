@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "KK ",
+    "SR ",
+    " P "
+  ],
+  "key": {
+    "K": "minecraft:white_concrete",
+    "S": "minecraft:string",
+    "R": "minecraft:redstone",
+    "P": "minecraft:stick"
+  },
+  "result": {
+    "id": "minecraft:carrot_on_a_stick",
+    "count": 1,
+    "components": {
+      "minecraft:custom_model_data": {
+        "strings": [
+          "7283"
+        ]
+      },
+      "minecraft:item_name": "Keytar"
+    }
+  }
+}
