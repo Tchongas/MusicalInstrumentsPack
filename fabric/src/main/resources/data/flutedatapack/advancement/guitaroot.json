@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:string"
+    },
+    "title": "String Theory",
+    "description": "Obtain string to unlock stringed instruments",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "flutedatapack:root",
+  "criteria": {
+    "rer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:string"
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "flutedatapack:guitar",
+      "flutedatapack:guitaracacia",
+      "flutedatapack:guitarbirch",
+      "flutedatapack:guitarcherry",
+      "flutedatapack:guitarcrimson",
+      "flutedatapack:guitardarkoak",
+      "flutedatapack:guitarjungle",
+      "flutedatapack:guitarmangroove",
+      "flutedatapack:guitarspruce",
+      "flutedatapack:guitarwarped",
+      "flutedatapack:banjo"
+    ]
+  }
+}

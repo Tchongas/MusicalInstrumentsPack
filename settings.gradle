@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = 'Fabric'
+                    url = uri('https://maven.fabricmc.net')
+                }
+            }
+            filter {
+                includeGroupAndSubgroups('net.fabricmc')
+            }
+        }
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name = 'MusicalInstrumentsPack'
+def toolingDir = providers.gradleProperty('modToolingDir').orElse(providers.environmentVariable('MOD_TOOLING_HOME')).getOrElse('../ModTooling')
+apply from: settingsDir.toPath().resolve(toolingDir).resolve('settings.gradle').toFile()

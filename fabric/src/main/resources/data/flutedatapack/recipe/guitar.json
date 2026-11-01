@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  C",
+    "B# ",
+    "BB "
+],
+"key": {
+  "#": [
+      "minecraft:string"
+  ],
+  "B": [
+      "minecraft:oak_planks"
+  ],
+  "C": [
+      "minecraft:stick"
+  ]
+},
+    "result": {
+      "id": "minecraft:carrot_on_a_stick",
+      "components":{
+        "minecraft:custom_model_data": {
+          "strings": [
+            "7271"
+          ]
+        },
+        "minecraft:item_name": "Oak Guitar"
+
+      },
+      "count": 1
+    }
+  }

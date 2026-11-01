@@ -1,0 +1,35 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+}
+
+// Shared loader-agnostic sources live in the fabric module's java tree.
+sourceSets.main.java {
+    srcDir '../fabric/src/main/java'
+    include '**/Constants.java', '**/ModCreativeTabs.java'
+}
+sourceSets.main.resources {
+    srcDir '../fabric/src/main/resources'
+    exclude 'fabric.mod.json', '**/*.mixins.json', '**/*.accesswidener', 'META-INF/services/**'
+}
+
+neoForge {
+    version = neoforge_version
+    def at = file('../fabric/src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    runs {
+        client {
+            client()
+        }
+        server {
+            server()
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}

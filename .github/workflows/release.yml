@@ -1,0 +1,118 @@
+name: Validated release
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Exact version from .devin/mod.json
+        required: true
+        type: string
+      qa_passed:
+        description: I tested these sources in Minecraft (mod and combined pack)
+        required: true
+        default: false
+        type: boolean
+      platforms_checked:
+        description: I checked both platforms; this version has not already been uploaded
+        required: true
+        default: false
+        type: boolean
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.repository }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.config.outputs.version }}
+      tooling_repository: ${{ steps.config.outputs.tooling_repository }}
+      tooling_ref: ${{ steps.config.outputs.tooling_ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: project
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - id: config
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+          QA_PASSED: ${{ inputs.qa_passed }}
+          PLATFORMS_CHECKED: ${{ inputs.platforms_checked }}
+          TOOLING_REPOSITORY: ${{ vars.MOD_TOOLING_REPOSITORY }}
+          TOOLING_REF: ${{ vars.MOD_TOOLING_REF }}
+        run: |
+          python - <<'PY'
+          import json, os, re
+          config = json.load(open('project/.devin/mod.json'))
+          assert os.environ['QA_PASSED'] == 'true', 'Complete Minecraft QA first'
+          assert os.environ['PLATFORMS_CHECKED'] == 'true', 'Check for existing uploads first'
+          assert os.environ['RELEASE_VERSION'] == config['build']['version'], 'Version mismatch'
+          assert re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+', os.environ['TOOLING_REPOSITORY']), 'Set MOD_TOOLING_REPOSITORY'
+          assert re.fullmatch(r'[0-9a-f]{40}', os.environ['TOOLING_REF']), 'Pin MOD_TOOLING_REF to a full commit SHA'
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              for key, value in {'version': config['build']['version'], 'java': config['build']['java_version'], 'tooling_repository': os.environ['TOOLING_REPOSITORY'], 'tooling_ref': os.environ['TOOLING_REF']}.items():
+                  out.write(f'{key}={value}\n')
+          PY
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ steps.config.outputs.tooling_repository }}
+          ref: ${{ steps.config.outputs.tooling_ref }}
+          path: ModTooling
+          persist-credentials: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ steps.config.outputs.java }}
+      - working-directory: ModTooling
+        run: python -m unittest -v
+      - run: python ModTooling/modtool.py --project project build
+      - run: python ModTooling/modtool.py --project project plan > release-plan.json
+      - run: |
+          echo 'Review the release-plan artifact, checksums, source commit, and Minecraft QA before approving.' >> "$GITHUB_STEP_SUMMARY"
+          echo "Source commit: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-candidate
+          path: project/output/${{ steps.config.outputs.version }}/
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-plan
+          path: release-plan.json
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: publishing
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: project
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ needs.build.outputs.tooling_repository }}
+          ref: ${{ needs.build.outputs.tooling_ref }}
+          path: ModTooling
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-candidate
+          path: project/output/${{ needs.build.outputs.version }}/
+      - run: python ModTooling/modtool.py --project project verify
+      - env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          CURSEFORGE_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
+          RELEASE_VERSION: ${{ needs.build.outputs.version }}
+        run: python ModTooling/modtool.py --project project publish --confirm "$RELEASE_VERSION"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: publish-receipts-${{ github.run_attempt }}
+          path: project/output/${{ needs.build.outputs.version }}/publish-receipts.json
+          if-no-files-found: warn

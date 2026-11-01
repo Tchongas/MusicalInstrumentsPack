@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " # ",
+    "BBB",
+    "   "
+  ],
+  "key": {
+    "#": [
+      "minecraft:string"
+    ],
+    "B": [
+      "minecraft:bamboo"
+    ]
+  },
+  "result": {
+    "id": "minecraft:carrot_on_a_stick",
+    "components": {
+      "minecraft:custom_model_data": {
+        "strings": [
+          "1"
+        ]
+      },
+      "minecraft:item_name": "Flute"
+    },
+    "count": 1
+  }
+}

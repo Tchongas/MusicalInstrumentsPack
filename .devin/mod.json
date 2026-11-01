@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "tooling_version": "0.1.0",
+  "kind": "wrapper",
+  "build": {
+    "version": "26.3.0.0",
+    "group": "com.tchongass.musicalinstruments",
+    "java_version": 25,
+    "minecraft_version": "26.3",
+    "mod_name": "MusicalInstruments",
+    "mod_author": "Pluko",
+    "mod_id": "musicalinstruments",
+    "license": "CC0-1.0",
+    "credits": "",
+    "description": "Adds musical instruments to Minecraft.",
+    "minecraft_version_range": "[26.3, 26.4)",
+    "fabric_version": "0.160.7+26.3",
+    "fabric_loader_version": "0.19.5",
+    "fabric_loom_version": "1.17.21",
+    "neoforge_version": "26.3.0.100",
+    "moddev_version": "2.0.148"
+  },
+  "game_versions": [
+    "26.3"
+  ],
+  "loaders": {
+    "fabric": "fabric",
+    "neoforge": "neoforge"
+  },
+  "resources": "fabric/src/main/resources",
+  "pack": {
+    "enabled": true,
+    "tab_name": "Instruments",
+    "icon_custom_model_data": "1"
+  },
+  "release": {
+    "channel": "release",
+    "changelog": "CHANGELOG.md",
+    "targets": {
+      "fabric": {
+        "modrinth": {
+          "project_id": null,
+          "dependencies": [
+            {
+              "project_id": "P7dR8mSH",
+              "dependency_type": "required"
+            }
+          ]
+        },
+        "curseforge": {
+          "project_id": null,
+          "relations": [
+            {
+              "slug": "fabric-api",
+              "type": "requiredDependency"
+            }
+          ]
+        }
+      },
+      "neoforge": {
+        "modrinth": {
+          "project_id": null,
+          "dependencies": []
+        },
+        "curseforge": {
+          "project_id": null,
+          "relations": []
+        }
+      },
+      "pack": {
+        "modrinth": {
+          "project_id": null,
+          "dependencies": []
+        },
+        "curseforge": {
+          "project_id": null,
+          "relations": []
+        }
+      }
+    }
+  }
+}

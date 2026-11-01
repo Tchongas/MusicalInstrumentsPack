@@ -1,0 +1,46 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"pattern": [
+	  "  C",
+	  "B# ",
+	  "DB "
+  ],
+  "key": {
+	"#": [
+		"minecraft:string"
+	],
+	"B": [
+		"minecraft:acacia_planks",
+		"minecraft:birch_planks",
+		"minecraft:cherry_planks",
+		"minecraft:crimson_planks",
+		"minecraft:dark_oak_planks",
+		"minecraft:jungle_planks",
+		"minecraft:mangrove_planks",
+		"minecraft:oak_planks",
+		"minecraft:spruce_planks",
+		"minecraft:warped_planks"
+	],
+	"C": [
+		"minecraft:stick"
+	],
+	"D": [
+		"minecraft:leather"
+	]
+  },
+	  "result": {
+		"id": "minecraft:carrot_on_a_stick",
+		"components":{
+			"minecraft:custom_model_data": {
+				"strings": [
+				  "7281"
+				]
+			  },
+		  "minecraft:item_name": "Banjo"
+  
+		},
+		"count": 1
+	  }
+	}
+  

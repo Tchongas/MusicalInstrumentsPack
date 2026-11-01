@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:carrot_on_a_stick",
+      "count": 1,
+      "components": {
+        "minecraft:custom_model_data": {
+          "strings": [
+            "1"
+          ]
+        }
+      }
+    },
+    "title": "Nothing but Treble",
+    "description": "Craft a Flute",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "flutedatapack:root",
+  "criteria": {
+    "rer": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipes": "flutedatapack:flute"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50
+  }
+}
