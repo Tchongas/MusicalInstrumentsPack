@@ -4,9 +4,11 @@ plugins {
 }
 
 // Shared loader-agnostic sources live in the fabric module's java tree.
+// Exclude only Fabric-specific classes; everything else (Constants, ModCreativeTabs) is shared.
 sourceSets.main.java {
     srcDir '../fabric/src/main/java'
-    include '**/Constants.java', '**/ModCreativeTabs.java'
+    exclude 'com/example/examplemod/ExampleMod.java', 'com/example/examplemod/CommonClass.java',
+            'com/example/examplemod/mixin/**', 'com/example/examplemod/platform/**'
 }
 sourceSets.main.resources {
     srcDir '../fabric/src/main/resources'
