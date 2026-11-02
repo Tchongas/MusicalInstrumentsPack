@@ -5,9 +5,9 @@
 		"particle": "block/light_gray_concrete",
 		"body": "block/light_gray_concrete",
 		"bezel": "block/gray_concrete",
-		"screen": "models:block/lime_concrete",
-		"dpad": "models:block/black_concrete",
-		"btn": "models:block/magenta_concrete"
+		"screen": "block/lime_concrete",
+		"dpad": "block/black_concrete",
+		"btn": "block/magenta_concrete"
 	},
 	"elements": [
 		{
@@ -169,7 +169,7 @@
 		"gui": {
 			"rotation": [7.82, -26.51, -9.57],
 			"translation": [0, -0.5, 0],
-			"scale": [0.87, 0.87, 0.87]
+			"scale": [0.94, 0.94, 0.94]
 		},
 		"head": {
 			"rotation": [0, -180, 0],

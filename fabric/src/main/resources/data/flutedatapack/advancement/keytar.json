@@ -11,14 +11,14 @@
         }
       }
     },
-    "title": "Keytar Hero",
+    "title": "Good synth of humor",
     "description": "Craft a Keytar",
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "flutedatapack:root",
+  "parent": "flutedatapack:redstoneroot",
   "criteria": {
     "rer": {
       "trigger": "minecraft:recipe_crafted",

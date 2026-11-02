@@ -8,9 +8,9 @@
   ],
   "key": {
     "K": "minecraft:white_concrete",
-    "S": "minecraft:string",
+    "S": "minecraft:iron_nugget",
     "R": "minecraft:redstone",
-    "P": "minecraft:stick"
+    "P": "minecraft:copper_ingot"
   },
   "result": {
     "id": "minecraft:carrot_on_a_stick",

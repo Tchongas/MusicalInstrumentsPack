@@ -3,6 +3,8 @@
   "textures": {
     "particle": "minecraft:block/birch_planks",
     "wood": "minecraft:block/birch_planks",
-    "top": "minecraft:block/birch_planks"
+    "top": "minecraft:block/birch_planks",
+    "dark": "minecraft:block/black_wool",
+    "metal": "minecraft:block/dark_oak_planks"
   }
 }

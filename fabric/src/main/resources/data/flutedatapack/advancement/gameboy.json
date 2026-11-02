@@ -18,7 +18,7 @@
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "flutedatapack:root",
+  "parent": "flutedatapack:redstoneroot",
   "criteria": {
     "rer": {
       "trigger": "minecraft:recipe_crafted",

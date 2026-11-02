@@ -108,6 +108,13 @@
           "type": "minecraft:model",
           "model": "item/guitar_bamboo"
         }
+      },
+      {
+        "when": "7285",
+        "model": {
+          "type": "minecraft:model",
+          "model": "item/guitar_pale"
+        }
       }
     ],
     "fallback": {

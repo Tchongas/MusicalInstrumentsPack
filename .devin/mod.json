@@ -49,6 +49,7 @@
           ]
         },
         "curseforge": {
+          "enabled": false,
           "project_id": "1035987",
           "relations": [
             {
